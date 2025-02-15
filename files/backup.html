@@ -1,0 +1,855 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="tablogo.png" type="image/x-icon">
+    <title>Harmony Instrumentals</title>
+    <link rel="stylesheet" href="home.css">
+    <!-- Include jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap JS, Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+
+
+</head>
+<body>
+    <div id="notificationBar" class="notification-bar"></div>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" id="homelogoLink" href="#home">
+                    <img src="logo.png" alt="Logo">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a id="homeLink" class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="instrumentsLink" class="nav-link" href="#instruments">Instruments</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <button id="openCheckoutModal" class="btn btn-primary">
+                    <img src="cart.jpg" alt="Checkout" height="30" width="30">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="home">
+        <div id="banner">
+            <img src="https://www.guitarpusher.com/cdn/shop/files/ESP_LTD_WEBSITE_BANNER_1024x.jpg?v=1702285326" alt="Banner Image" id="bannerImage">
+        </div>
+
+        <div class="products">
+            <div class="product">
+                <img src="acoustic.avif">
+                <div class="overlay">
+                    <h3>Acoustic Guitars</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="electric.avif">
+                <div class="overlay">
+                    <h3>Electric Guitars</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="ukelele.avif">
+                <div class="overlay">
+                    <h3>Ukelele</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="drums.avif">
+                <div class="overlay">
+                    <h3>Drums</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="ampli.avif">
+                <div class="overlay">
+                    <h3>Amplifiers</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="instruments" class="instruments">
+        <div class="container">
+            <h2 class="text-center">Instruments</h2>
+            <div class="row products">
+                <!-- String Instruments-->
+
+                <div class="col-md-4">
+                    <div class="product">
+                        <img src="nl38.png">
+                        <div class="overlay">
+                            <div class="product-details">
+                                <h3 class="text-bold">NL 38</h3>
+                                <p>Type: Acoustic Guitar</p>
+                                <p>Color: Natural</p>
+                                <p>$100</p>
+                                <button class="add-to-cart" onclick="addToCart('NL 38 Natural', 100, 'https://globalmusic.ph/wp-content/uploads/2023/12/NL-38-NATURAL-2.png', 'Type: Acoustic Guitar')">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-title">
+                            <h3 class="text-bold">NL 38</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="product">
+                        <img src="355epi.png">
+                        <div class="overlay">
+                            <div class="product-details">
+                                <h3 class="text-bold">355 Epiphone</h3>
+                                <p>Type: Electric Guitar</p>
+                                <p>Color: Natural</p>
+                                <p>$200</p>
+                                <button class="add-to-cart" onclick="addToCart('355 Epiphone Natural', 200, '355epi.png', 'Type: Electric Guitar')">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-title">
+                            <h3 class="text-bold">355 Epiphone</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="product">
+                        <img src="uks24.png">
+                        <div class="overlay">
+                            <div class="product-details">
+                                <h3 class="text-bold">UKS 24 ORD</h3>
+                                <p>Type: Ukelele</p>
+                                <p>Color: Natural</p>
+                                <p>$300</p>
+                                <button class="add-to-cart" onclick="addToCart('UKS 24 ORD Natural', 400, 'uks24.png', 'Type: Ukelele')">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-title">
+                            <h3 class="text-bold">UKS 24 ORD</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Drums -->
+
+                <div class="col-md-4">
+                    <div class="product">
+                        <img src="pulse505.png">
+                        <div class="overlay">
+                            <div class="product-details">
+                                <h3 class="text-bold">Pulse 505</h3>
+                                <p>Type: Electric Drum</p>
+                                <p>Color: Black</p>
+                                <p>$400</p>
+                                <button class="add-to-cart" onclick="addToCart('Pulse 505', 300, 'pulse505.png', 'Type: Electric Drum')">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-title">
+                            <h3 class="text-bold">Pulse 505</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="product">
+                        <img src="gle.png">
+                        <div class="overlay">
+                            <div class="product-details">
+                                <h3 class="text-bold">GLE-811A</h3>
+                                <p>Type: Junior Drum Set</p>
+                                <p>Color: Black and Silver</p>
+                                <p>$800</p>
+                                <button class="add-to-cart" onclick="addToCart('GLE-811A', 800, 'gle.png', 'Type: Junior Drum Set')">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-title">
+                            <h3 class="text-bold">GLE-811A</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="product">
+                        <img src="gll.jpg">
+                        <div class="overlay">
+                            <div class="product-details">
+                                <h3 class="text-bold">GLL-2111</h3>
+                                <p>Type: Large Drum Set</p>
+                                <p>Color: Dark Green</p>
+                                <p>$1500</p>
+                                <button class="add-to-cart" onclick="addToCart('GLL-2111', 1500, 'gll.jpg', 'Type: Large Drum Set')">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-title">
+                            <h3 class="text-bold">GLL-2111</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amplifiers -->
+
+                <div class="col-md-4">
+                    <div class="product">
+                        <img src="cort.jpg">
+                        <div class="overlay">
+                            <div class="product-details">
+                                <h3 class="text-bold">Cort CM30R 30W</h3>
+                                <p>Type: Amplifier</p>
+                                <p>Color: Black</p>
+                                <p>$500</p>
+                                <button class="add-to-cart" onclick="addToCart('Cort CM30R 30W Electric Guitar Amplifier With Reverb', 500, 'cort.jpg', 'Type: Amplifier')">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-title">
+                            <h3 class="text-bold">Cort CM30R 30W</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems"></div>
+                    <div id="totalPrice"></div>
+                </div>
+                <div class="modal-footer">
+                    <button id="clearCartButton" class="btn btn-danger" style="display:none;" onclick="clearCart()">Clear Cart</button>
+                    <button id="checkoutButton" class="btn btn-success">Checkout</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="home.js"></script>
+    <script>
+        // Change page
+        function loadCartFromLocalStorage() {
+            const storedCart = localStorage.getItem('cart');
+            if (storedCart) {
+                cart = JSON.parse(storedCart);
+                updateCartModal();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            loadCartFromLocalStorage();
+
+
+            showSection("home");
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            const homeLink = document.getElementById("homeLink");
+            const homelogoLink = document.getElementById("homelogoLink");
+            const instrumentsLink = document.getElementById("instrumentsLink");
+            const openCheckoutModalButton = document.getElementById("openCheckoutModal");
+            const checkoutButton = document.getElementById("checkoutButton");
+
+            if (checkoutButton) {
+                checkoutButton.addEventListener("click", function () {
+                    performCheckout();
+                });
+            }
+
+            function performCheckout() {
+                // Get the cart items and their details
+                const cartItems = cart.map(item => `${item.productName} - $${item.price.toFixed(2)}`).join('%0A');
+                const totalPrice = cart.reduce((total, item) => total + item.price, 0).toFixed(2);
+
+                // Create the mailto link with new line characters
+                const mailtoLink = `mailto:?subject=Checkout Details&body=Cart Items:%0A${cartItems}%0A%0ATotal Price: $${totalPrice}`;
+
+                // Open the mail client
+                window.location.href = mailtoLink;
+
+                // Display a notification or alert
+                showAlert("Checkout details pasted to mail!");
+            }
+
+            if (homeLink) {
+                homeLink.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    showSection("home");
+                });
+            }
+
+            if (homelogoLink) {
+                homelogoLink.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    showSection("home");
+                });
+            }
+
+            if (instrumentsLink) {
+                instrumentsLink.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    showSection("instruments");
+                });
+            }
+
+            if (openCheckoutModalButton) {
+                openCheckoutModalButton.addEventListener("click", function () {
+                    updateCartModal();
+                    jQuery('#cartModal').modal('show');
+                });
+            }
+        });
+
+        function showSection(sectionId) {
+            const sections = ["home", "instruments"];
+
+            // Hide all sections
+            sections.forEach(function (section) {
+                const element = document.getElementById(section);
+                if (element) {
+                    element.style.display = "none";
+                }
+            });
+
+            // Show the selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = "block";
+            }
+        }
+
+    </script>
+
+    <script>
+        // Cart
+        let cart = [];
+
+        function saveCartToLocalStorage() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function addToCart(productName, price, imageUrl, description) {
+            cart.push({ productName, price, imageUrl, description });
+            updateCartModal();
+            showNotification(productName);
+            saveCartToLocalStorage();
+        }
+
+        function updateCartModal() {
+            const cartItemsContainer = document.getElementById("cartItems");
+            const totalPriceContainer = document.getElementById("totalPrice");
+            const clearCartButton = document.getElementById("clearCartButton");
+            const checkoutButton = document.getElementById("checkoutButton");
+            let cartItemsHtml = "";
+            let totalPrice = 0;
+
+            cart.forEach(item => {
+                cartItemsHtml += `
+                <div class="cart-item">
+                    <img class="cart-item-image" src="${item.imageUrl}" alt="${item.productName}">
+                    <div class="cart-item-details">
+                        <span class="product-name">${item.productName}</span>
+                        <p class="product-description">${item.description}</p>
+                        <span class="product-price">$${item.price.toFixed(2)}</span>
+                    </div>
+                </div>`;
+                totalPrice += item.price;
+            });
+
+            cartItemsContainer.innerHTML = cartItemsHtml;
+            totalPriceContainer.textContent = `Total: $${totalPrice.toFixed(2)}`;
+
+
+            clearCartButton.style.display = cart.length > 0 ? "block" : "none";
+
+
+            checkoutButton.style.display = cart.length > 0 ? "block" : "none";
+        }
+
+        function clearCart() {
+            // Clear the cart
+            cart = [];
+
+            // Update the cart modal
+            updateCartModal();
+        }
+
+
+        function showNotification(productName) {
+
+            alert(`${productName} added to the cart!`);
+        }
+
+
+
+    </script>
+
+    <script>
+        // Notif Bar
+        function showNotification(productName) {
+            const notificationBar = document.getElementById("notificationBar");
+            notificationBar.textContent = `${productName} added to the cart!`;
+
+            // Show notification
+            notificationBar.style.display = "block";
+
+            // Hide notification after a indicated seconds
+            setTimeout(() => {
+                notificationBar.style.display = "none";
+            }, 3000);
+        }
+
+        function showAlert(alertText) {
+            const notificationBar = document.getElementById("notificationBar");
+            notificationBar.textContent = `${alertText}`;
+
+            // Show notification
+            notificationBar.style.display = "block";
+
+            // Hide notification after a indicated seconds
+            setTimeout(() => {
+                notificationBar.style.display = "none";
+            }, 7000);
+        }
+
+    </script>
+
+    <script>
+        // Banner
+        let isDragging = false;
+        let startPositionX = 0;
+        let currentSlide = 0;
+        const slides = [
+            "https://www.guitarpusher.com/cdn/shop/files/ESP_LTD_WEBSITE_BANNER_1024x.jpg?v=1702285326",
+            "https://www.guitarpusher.com/cdn/shop/files/GP_Clearance_Sale_Banner_9246899b-cb57-46ba-946c-728557db3c47_1024x.jpg?v=1698404177",
+            "https://www.guitarpusher.com/cdn/shop/files/GP_Shipping_Rebate_Poster_a260fb7a-2203-47e2-98e2-59eacfe5e602_1024x.jpg?v=1693649324",
+            "https://i.imgur.com/WFNZjU2.png",
+            "https://i.imgur.com/kIhLDQV.png",
+
+        ];
+
+        const interval = 3000;
+        let autoChangeTimer;
+
+        function startAutoChange() {
+            autoChangeTimer = setInterval(() => {
+                nextSlide();
+            }, interval);
+        }
+
+        function stopAutoChange() {
+            clearInterval(autoChangeTimer);
+        }
+
+        // Start auto change when the page loads
+        document.addEventListener("DOMContentLoaded", function () {
+            startAutoChange();
+        });
+
+
+        function showSlide(index) {
+            document.getElementById("bannerImage").src = slides[index];
+            currentSlide = index;
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        const banner = document.getElementById("banner");
+        const image = document.getElementById("bannerImage");
+
+        banner.addEventListener("mousedown", function (event) {
+
+            if (event.target === image || event.target.parentNode === image) {
+                isDragging = true;
+                startPositionX = event.clientX;
+                image.classList.add("grabbing");
+                image.style.cursor = "grab";
+                stopAutoChange();
+            }
+        });
+
+        document.addEventListener("mousemove", function (event) {
+            if (isDragging) {
+                const deltaX = event.clientX - startPositionX;
+                if (deltaX > 50) {
+                    nextSlide();
+                    isDragging = false;
+                } else if (deltaX < -50) {
+                    prevSlide();
+                    isDragging = false;
+                }
+            }
+        });
+
+        document.addEventListener("mouseup", function () {
+            if (isDragging) {
+                isDragging = false;
+                image.classList.remove("grabbing");
+                image.style.cursor = "default";
+                startAutoChange();
+            }
+        });
+
+        image.addEventListener("mouseenter", function () {
+            if (!isDragging) {
+                image.classList.add("grab");
+                image.style.cursor = "grab";
+                stopAutoChange();
+            }
+        });
+
+        image.addEventListener("mouseleave", function () {
+            if (!isDragging) {
+                image.classList.remove("grabbing");
+                image.classList.remove("grab");
+                image.style.cursor = "default";
+                startAutoChange();
+            }
+        });
+
+    </script>
+    <script>
+        // Change page
+        function loadCartFromLocalStorage() {
+            const storedCart = localStorage.getItem('cart');
+            if (storedCart) {
+                cart = JSON.parse(storedCart);
+                updateCartModal();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            loadCartFromLocalStorage();
+
+
+            showSection("home");
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            const homeLink = document.getElementById("homeLink");
+            const homelogoLink = document.getElementById("homelogoLink");
+            const instrumentsLink = document.getElementById("instrumentsLink");
+            const openCheckoutModalButton = document.getElementById("openCheckoutModal");
+            const checkoutButton = document.getElementById("checkoutButton");
+
+            if (checkoutButton) {
+                checkoutButton.addEventListener("click", function () {
+                    performCheckout();
+                });
+            }
+
+            function performCheckout() {
+                // Get the cart items and their details
+                const cartItems = cart.map(item => `${item.productName} - $${item.price.toFixed(2)}`).join('%0A');
+                const totalPrice = cart.reduce((total, item) => total + item.price, 0).toFixed(2);
+
+                // Create the mailto link with new line characters
+                const mailtoLink = `mailto:?subject=Checkout Details&body=Cart Items:%0A${cartItems}%0A%0ATotal Price: $${totalPrice}`;
+
+                // Open the mail client
+                window.location.href = mailtoLink;
+
+                // Display a notification or alert
+                showAlert("Checkout details pasted to mail!");
+            }
+
+            if (homeLink) {
+                homeLink.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    showSection("home");
+                });
+            }
+
+            if (homelogoLink) {
+                homelogoLink.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    showSection("home");
+                });
+            }
+
+            if (instrumentsLink) {
+                instrumentsLink.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    showSection("instruments");
+                });
+            }
+
+            if (openCheckoutModalButton) {
+                openCheckoutModalButton.addEventListener("click", function () {
+                    updateCartModal();
+                    jQuery('#cartModal').modal('show');
+                });
+            }
+        });
+
+        function showSection(sectionId) {
+            const sections = ["home", "instruments"];
+
+            // Hide all sections
+            sections.forEach(function (section) {
+                const element = document.getElementById(section);
+                if (element) {
+                    element.style.display = "none";
+                }
+            });
+
+            // Show the selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = "block";
+            }
+        }
+
+    </script>
+
+    <script>
+        // Cart
+        let cart = [];
+
+        function saveCartToLocalStorage() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function addToCart(productName, price, imageUrl, description) {
+            cart.push({ productName, price, imageUrl, description });
+            updateCartModal();
+            showNotification(productName);
+            saveCartToLocalStorage();
+        }
+
+        function updateCartModal() {
+            const cartItemsContainer = document.getElementById("cartItems");
+            const totalPriceContainer = document.getElementById("totalPrice");
+            const clearCartButton = document.getElementById("clearCartButton");
+            const checkoutButton = document.getElementById("checkoutButton");
+            let cartItemsHtml = "";
+            let totalPrice = 0;
+
+            cart.forEach(item => {
+                cartItemsHtml += `
+                <div class="cart-item">
+                    <img class="cart-item-image" src="${item.imageUrl}" alt="${item.productName}">
+                    <div class="cart-item-details">
+                        <span class="product-name">${item.productName}</span>
+                        <p class="product-description">${item.description}</p>
+                        <span class="product-price">$${item.price.toFixed(2)}</span>
+                    </div>
+                </div>`;
+                totalPrice += item.price;
+            });
+
+            cartItemsContainer.innerHTML = cartItemsHtml;
+            totalPriceContainer.textContent = `Total: $${totalPrice.toFixed(2)}`;
+
+
+            clearCartButton.style.display = cart.length > 0 ? "block" : "none";
+
+
+            checkoutButton.style.display = cart.length > 0 ? "block" : "none";
+        }
+
+        function clearCart() {
+            // Clear the cart
+            cart = [];
+
+            // Update the cart modal
+            updateCartModal();
+        }
+
+
+        function showNotification(productName) {
+
+            alert(`${productName} added to the cart!`);
+        }
+
+
+
+    </script>
+
+    <script>
+        // Notif Bar
+        function showNotification(productName) {
+            const notificationBar = document.getElementById("notificationBar");
+            notificationBar.textContent = `${productName} added to the cart!`;
+
+            // Show notification
+            notificationBar.style.display = "block";
+
+            // Hide notification after a indicated seconds
+            setTimeout(() => {
+                notificationBar.style.display = "none";
+            }, 3000);
+        }
+
+        function showAlert(alertText) {
+            const notificationBar = document.getElementById("notificationBar");
+            notificationBar.textContent = `${alertText}`;
+
+            // Show notification
+            notificationBar.style.display = "block";
+
+            // Hide notification after a indicated seconds
+            setTimeout(() => {
+                notificationBar.style.display = "none";
+            }, 7000);
+        }
+
+    </script>
+
+    <script>
+        // Banner
+        let isDragging = false;
+        let startPositionX = 0;
+        let currentSlide = 0;
+        const slides = [
+            "https://www.guitarpusher.com/cdn/shop/files/ESP_LTD_WEBSITE_BANNER_1024x.jpg?v=1702285326",
+            "https://www.guitarpusher.com/cdn/shop/files/GP_Clearance_Sale_Banner_9246899b-cb57-46ba-946c-728557db3c47_1024x.jpg?v=1698404177",
+            "https://www.guitarpusher.com/cdn/shop/files/GP_Shipping_Rebate_Poster_a260fb7a-2203-47e2-98e2-59eacfe5e602_1024x.jpg?v=1693649324",
+            "https://i.imgur.com/WFNZjU2.png",
+            "https://i.imgur.com/kIhLDQV.png",
+
+        ];
+
+        const interval = 3000;
+        let autoChangeTimer;
+
+        function startAutoChange() {
+            autoChangeTimer = setInterval(() => {
+                nextSlide();
+            }, interval);
+        }
+
+        function stopAutoChange() {
+            clearInterval(autoChangeTimer);
+        }
+
+        // Start auto change when the page loads
+        document.addEventListener("DOMContentLoaded", function () {
+            startAutoChange();
+        });
+
+
+        function showSlide(index) {
+            document.getElementById("bannerImage").src = slides[index];
+            currentSlide = index;
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        const banner = document.getElementById("banner");
+        const image = document.getElementById("bannerImage");
+
+        banner.addEventListener("mousedown", function (event) {
+
+            if (event.target === image || event.target.parentNode === image) {
+                isDragging = true;
+                startPositionX = event.clientX;
+                image.classList.add("grabbing");
+                image.style.cursor = "grab";
+                stopAutoChange();
+            }
+        });
+
+        document.addEventListener("mousemove", function (event) {
+            if (isDragging) {
+                const deltaX = event.clientX - startPositionX;
+                if (deltaX > 50) {
+                    nextSlide();
+                    isDragging = false;
+                } else if (deltaX < -50) {
+                    prevSlide();
+                    isDragging = false;
+                }
+            }
+        });
+
+        document.addEventListener("mouseup", function () {
+            if (isDragging) {
+                isDragging = false;
+                image.classList.remove("grabbing");
+                image.style.cursor = "default";
+                startAutoChange();
+            }
+        });
+
+        image.addEventListener("mouseenter", function () {
+            if (!isDragging) {
+                image.classList.add("grab");
+                image.style.cursor = "grab";
+                stopAutoChange();
+            }
+        });
+
+        image.addEventListener("mouseleave", function () {
+            if (!isDragging) {
+                image.classList.remove("grabbing");
+                image.classList.remove("grab");
+                image.style.cursor = "default";
+                startAutoChange();
+            }
+        });
+
+    </script>
+
+</body>
+</html>
